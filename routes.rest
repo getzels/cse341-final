@@ -1,0 +1,20 @@
+//Local
+// GET All users
+GET http://localhost:3000/user
+
+//GET One user
+GET http://localhost:3000/user/62c9c5836df646dbcaec69ee
+
+
+//POST (create new contact) 
+POST http://localhost:3000/user http/1.1 
+content-type: application/json
+
+{
+    "firstName":"Test", 
+    "lastName":"User", 
+    "email":"test@mail.com"
+}
+
+//DELETE
+DELETE http://localhost:3000/user/62c9c5836df646dbcaec69ee http/1.1 
