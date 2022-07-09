@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon server.js",
-    "start": "node server.js"
+    "test": "nodemon swagger.js",
+    "start": "node swagger.js",
+    "swagger-autogen": "node swagger.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,12 @@
   "homepage": "https://github.com/getzels/cse341-final#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.4.4",
-    "mongoose-findorcreate": "^3.0.0"
+    "mongoose-findorcreate": "^3.0.0",
+    "swagger-autogen": "^2.21.5",
+    "swagger-ui-express": "^4.4.0"
   }
 }
