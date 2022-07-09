@@ -20,6 +20,8 @@
   "homepage": "https://github.com/getzels/cse341-final#readme",
   "dependencies": {
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "mongoose": "^6.4.4",
+    "mongoose-findorcreate": "^3.0.0"
   }
 }
