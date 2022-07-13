@@ -1,12 +1,13 @@
 const swaggerAutogen = require('swagger-autogen')();
+require('dotenv').config();
 
 const doc = {
     info: {
         title: 'Gospel Directory',
         description: 'Final project',
     },
-    host: 'final-project-cse341.herokuapp.com',
-    schemes: ['https'],
+    host: process.env.BASE_URL,
+    schemes: ['http'],
 };
 
 const outputFile = './swagger/swagger-output.json';
