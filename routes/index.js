@@ -13,6 +13,7 @@ var options = {
 };
 
 router.use('/user', require('./user'));
+router.use('/auth', require('./authentication').routes);
 
 router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 

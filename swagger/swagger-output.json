@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "TO-DO API",
-    "description": "Project 2",
+    "title": "Gospel Directory",
+    "description": "Final project",
     "version": "1.0.0"
   },
-  "host": "cse341-todo-list.herokuapp.com",
+  "host": "final-project-cse341.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -103,6 +103,27 @@
             "description": "Internal Server Error"
           }
         }
+      }
+    },
+    "/auth/google": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/auth/google/callback": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
       }
     }
   }
