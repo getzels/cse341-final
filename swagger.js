@@ -7,7 +7,7 @@ const doc = {
         description: 'Final project',
     },
     host: process.env.BASE_URL,
-    schemes: ['http'],
+    schemes: ['https'],
 };
 
 const outputFile = './swagger/swagger-output.json';

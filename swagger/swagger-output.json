@@ -5,9 +5,10 @@
     "description": "Final project",
     "version": "1.0.0"
   },
+  "host": "final-project-cse341.herokuapp.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/user/": {
