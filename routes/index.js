@@ -13,6 +13,8 @@ var options = {
 };
 
 router.use('/user', require('./user'));
+router.use('/book', require('./book'));
+router.use('/directory', require('./directory'));
 router.use('/auth', require('./authentication').routes);
 
 router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));

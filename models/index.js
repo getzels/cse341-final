@@ -6,8 +6,9 @@ mongoose.Promise = global.Promise;
 const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
-db.book = require('./book')(mongoose);
-db.user = require('./user')
+db.book = require('./book');
+db.user = require('./user');
+db.directory = require('./directory');
 
 module.exports = db;
 
