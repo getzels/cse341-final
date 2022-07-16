@@ -5,7 +5,6 @@ let BookSchema = new mongoose.Schema(
     {
        name:{
         type: String,
-        ref: 'user'
        },
        publishDate:{
         type: String
@@ -16,10 +15,10 @@ let BookSchema = new mongoose.Schema(
        type:{
         type: String
        },
-       goal:{
+       goal:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'readingGoal'
-       }
+       }]
     }, {timestamps: true}
 );
 

@@ -22,4 +22,7 @@ router.put('/:_id', isLoggedIn, bookController.updateBook)
 //Delete one single book
 router.delete('/:_id', isLoggedIn, bookController.deleteBook);
 
+//Delete book from directory
+router.delete('/:_id', isLoggedIn, bookController.deleteBook);
+
 module.exports = router;

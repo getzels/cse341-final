@@ -9,6 +9,8 @@ db.url = dbConfig.url;
 db.book = require('./book');
 db.user = require('./user');
 db.directory = require('./directory');
+db.readingGoal = require('./readingGoals');
+
 
 module.exports = db;
 

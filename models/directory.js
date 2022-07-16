@@ -10,10 +10,9 @@ let DirectorySchema = new mongoose.Schema(
         type: String
        },
        books: [{
-        id: mongoose.Schema.Types.ObjectId,
-        name: String
-       }
-    ],
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'book'
+       }],
     }, {timestamps: true}
 );
 

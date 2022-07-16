@@ -21,9 +21,9 @@ const createBook = async (req, res) => {
       }
  };
 
+ //all books
 const getBooks = (req, res) => {
-      console.log();
-      Book.find({})
+      Book.find({}).select('-goal')
         .then((data) => {
           res.send(data);
         })
@@ -34,10 +34,10 @@ const getBooks = (req, res) => {
      });
 };
 
+//one single book
 const getBook = (req, res) => {
       const id = req.params._id;
-
-      Book.findById({ _id: id })
+      Book.findById({ _id: id}).select('-goal')
         .then((data) => {
           if(!data){
             res.status(404).send({message: `Invalid ID given`})
@@ -72,6 +72,7 @@ const updateBook = (req, res) => {
         res.status(500).send({message: err.message || 'An error occurred while deleting the pet'})
       })};
 
+//might update later
 const deleteBook = (req, res) => {
     const id = req.params._id;
     const result = Book.findByIdAndDelete({_id:id})
