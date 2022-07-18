@@ -8,35 +8,10 @@
   "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
+    "https",
     "http"
   ],
   "paths": {
-    "/controller/user.js": {
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
     "/user/": {
       "post": {
         "description": "",

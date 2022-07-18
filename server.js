@@ -37,15 +37,16 @@ app.use(bodyParser.json());
 
 app.use('/', require('./routes'))
 
-app.post('/controller/user.js', signupValidation, (req, res) => {
-    const { firstName, lastName, email } = req.body;
-    const user = new db.user({
-        firstName,
-        lastName,
-        email
-    });
-});
+// app.post('/controller/user.js', signupValidation, (req, res) => {
+//     const { firstName, lastName, email } = req.body;
+//     const user = new db.user({
+//         firstName,
+//         lastName,
+//         email
+//     });
+// });
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
 });
+module.exports = app
