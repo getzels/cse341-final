@@ -8,21 +8,21 @@ router.use(passport.initialize());
 router.use(passport.session());
 
 //Create a book
-router.post('/', isLoggedIn, bookController.createBook)
+router.post('/', bookController.createBook)
 
 //Get all books
-router.get('/', isLoggedIn, bookController.getBooks)
+router.get('/', bookController.getBooks)
 
 //Get one single book
-router.get('/:_id', isLoggedIn, bookController.getBook)
+router.get('/:_id', bookController.getBook)
 
 //Update a single book
 router.put('/:_id', isLoggedIn, bookController.updateBook)
 
 //Delete one single book
-router.delete('/:_id', isLoggedIn, bookController.deleteBook);
+router.delete('/:_id',isLoggedIn, bookController.deleteBook);
 
 //Delete book from directory
-router.delete('/:_id', isLoggedIn, bookController.deleteBook);
+// router.delete('/:_id', isLoggedIn, bookController.deleteBook);
 
 module.exports = router;

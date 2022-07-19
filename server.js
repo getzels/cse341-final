@@ -37,14 +37,14 @@ app.use(bodyParser.json());
 
 app.use('/', require('./routes'))
 
-app.post('/controller/user.js', signupValidation, (req, res) => {
-    const { firstName, lastName, email } = req.body;
-    const user = new db.user({
-        firstName,
-        lastName,
-        email
-    });
-});
+// app.post('/controller/user.js', signupValidation, (req, res) => {
+//     const { firstName, lastName, email } = req.body;
+//     const user = new db.user({
+//         firstName,
+//         lastName,
+//         email
+//     });
+// });
 
 // bookValidation
 app.post('/controller/book.js', bookValidation, (req, res) => {
@@ -84,3 +84,4 @@ app.post('/controller/readingGoal.js', readingGoalValidation, (req, res) => {
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
 });
+module.exports = app

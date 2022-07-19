@@ -1,5 +1,5 @@
 //require express-validator
-const check = require('express-validator');
+const { check } = require('express-validator');
 
 exports.signupValidation = [
     check('firstName', 'First name is requied').not().isEmpty(),
