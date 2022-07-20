@@ -29,7 +29,7 @@ routes.get('/logout', function(req, res,next){
 
 routes.get('/google/callback',
     passport.authenticate('google', {
-        successRedirect: '/auth/success',
+        successRedirect: '/api-docs',
         failureRedirect: '/auth/failed',
     }));
 
