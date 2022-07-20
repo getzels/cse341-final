@@ -18,6 +18,7 @@ const toId = mongoose.Types.ObjectId;
     },
 */
 const createDirectory = async (req, res) => {
+     //#swagger.summary = Use to create user directory/profile
     const userEmail = req.user.email;
     const bookId= toId(req.params._id);
     await Directory.findOne({user: userEmail}).then((data)=>{
@@ -47,7 +48,7 @@ const createDirectory = async (req, res) => {
             // console.log('haha');
             Book.findById({ _id: bookId }).then((book) => {
                 if(!book){
-                    res.status(404).send({message: `Cannot find book with id ${id}`})
+                    return res.status(404).send({message: `Cannot find book with id ${bookId}`})
                 }
                 console.log(data.books)
 
@@ -70,12 +71,13 @@ const createDirectory = async (req, res) => {
                     res.send({message:'Book already exists in directory'})
                 }
             }
-           )
-        }})}
+           )}
+        })}
 
 
 //get all directories from all users       
 const getDirectories = async (req,res) =>{
+     //#swagger.summary = Use to get all directories
     await Directory.find({}).populate({path:"books", model: "book"}).populate
     ({path:"books", populate:{path:"goal", model: "readingGoal",match:{user:req.user.email}}})
     .then((data)=>{

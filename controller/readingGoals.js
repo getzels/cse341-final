@@ -7,6 +7,7 @@ const Book = db.book;
 const Directory = db.directory;
 
 const createGoal = async (req, res) => {
+  //#swagger.summary = Use to register create a new goal
     req.params.book = toId(req.params.book);
       if (!req.body.description){
           res.status(400).send({message: 'Please make sure to fill-up all required data!'});
@@ -35,6 +36,7 @@ const createGoal = async (req, res) => {
         
  //get goals by logged-in user
  const getUserGoals = async (req, res) => {
+   //#swagger.summary = Use to get all user goals
     await Goal.find({user: req.user.email}).populate({path: "book", model:"book", select:"name, publishDate, publisher, type"})
       .then((data) => {
         res.send(data);
@@ -48,6 +50,7 @@ const createGoal = async (req, res) => {
  
 //get everyone's goals
 const getGoals = (req, res) => {
+   //#swagger.summary = Use to get all goals
       console.log();
       Goal.find({}).populate({path: "book", model:"book", select:"name, publishDate, publisher, type"})
         .then((data) => {
@@ -62,6 +65,7 @@ const getGoals = (req, res) => {
 
 //get one single goal
 const getGoal = (req, res) => {
+   //#swagger.summary = Use to get one specific goal
       const id = req.params._id;
 
       Goal.findById({ _id: id }).populate({path: "book", model:"book", select:"name, publishDate, publisher, type"})
@@ -84,6 +88,7 @@ const getGoal = (req, res) => {
 // "endDate": req.body.endDate,
 // "book": req.params.book
 const updateGoal = (req, res) => {
+   //#swagger.summary = Use to update a specific goal
     const id = req.params._id;
       const {description, startDate, endDate} = req.body;
       const updatedGoal= Goal.findByIdAndUpdate({_id: id},{description, startDate, endDate})
@@ -96,8 +101,8 @@ const updateGoal = (req, res) => {
         res.status(500).send({message: err.message || 'An error occurred while deleting the pet'})
       })};
 
-//might update later
 const deleteGoal = (req, res, next) => {
+   //#swagger.summary = Use to delete a specific goal
     const id = toId(req.params._id);
     const result = Goal.findByIdAndDelete({_id:id})
     .then(data => {

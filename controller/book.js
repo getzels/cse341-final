@@ -3,10 +3,11 @@ const Book = db.book;
 
 
 const createBook = async (req, res) => {
-      if (!req.body.name || !req.body.publishDate || !req.body.category || !req.body.publisher || !req.body.type){
-          res.status(400).send({message: 'Please make sure to fill-up all required data!'});
-          return;
-      }
+   //#swagger.summary = Use to create a new book
+      // if (!req.body.name || !req.body.publishDate || !req.body.category || !req.body.publisher || !req.body.type){
+      //     res.status(400).send({message: 'Please make sure to fill-up all required data!'});
+      //     return;
+      // }
       try{
       const book = await Book.create({
           "name": req.body.name,
@@ -23,6 +24,7 @@ const createBook = async (req, res) => {
 
  //all books
 const getBooks = (req, res) => {
+   //#swagger.summary = Use to get all books
       Book.find({}).select('-goal')
         .then((data) => {
           res.send(data);
@@ -36,6 +38,7 @@ const getBooks = (req, res) => {
 
 //one single book
 const getBook = (req, res) => {
+   //#swagger.summary = Use to get one specific book
       const id = req.params._id;
       Book.findById({ _id: id}).select('-goal')
         .then((data) => {
@@ -53,13 +56,8 @@ const getBook = (req, res) => {
         });
 };
 
-
-/** name: String,
-        publishDate: String,
-        category: String,
-        publisher: String,
-        type: String */
 const updateBook = (req, res) => {
+   //#swagger.summary = Use to update a book
     const id = req.params._id;
       const {name, publishDate, category, publisher, type} = req.body;
       const updatedBook = Book.findByIdAndUpdate({_id: id},{name, publishDate, category, publisher, type})
@@ -68,12 +66,11 @@ const updateBook = (req, res) => {
           res.status(404).send({message: `Invalid ID given`})
         }else{
           res.send({'message': `Book was successfully updated!`})
-      }}).catch(err =>{
-        res.status(500).send({message: err.message || 'An error occurred while deleting the pet'})
-      })};
+      }})};
 
-//might update later
+
 const deleteBook = (req, res) => {
+   //#swagger.summary = Use to delete a book
     const id = req.params._id;
     const result = Book.findByIdAndDelete({_id:id})
     .then(data => {

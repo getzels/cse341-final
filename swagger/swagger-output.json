@@ -108,6 +108,7 @@
     },
     "/book/": {
       "post": {
+        "summary": "Use to create a new book",
         "description": "",
         "parameters": [
           {
@@ -148,6 +149,7 @@
         }
       },
       "get": {
+        "summary": "Use to get all books",
         "description": "",
         "parameters": [],
         "responses": {
@@ -162,6 +164,7 @@
     },
     "/book/{_id}": {
       "get": {
+        "summary": "Use to get one specific book",
         "description": "",
         "parameters": [
           {
@@ -184,6 +187,7 @@
         }
       },
       "put": {
+        "summary": "Use to update a book",
         "description": "",
         "parameters": [
           {
@@ -223,13 +227,11 @@
           },
           "404": {
             "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
+        "summary": "Use to delete a book",
         "description": "",
         "parameters": [
           {
@@ -254,6 +256,7 @@
     },
     "/directory/{_id}": {
       "post": {
+        "summary": "Use to create user directory/profile",
         "description": "",
         "parameters": [
           {
@@ -321,6 +324,7 @@
     },
     "/readingGoals/userGoals": {
       "get": {
+        "summary": "Use to get all user goals",
         "description": "",
         "parameters": [],
         "responses": {
@@ -335,6 +339,7 @@
     },
     "/readingGoals/{book}": {
       "post": {
+        "summary": "Use to register create a new goal",
         "description": "",
         "parameters": [
           {
@@ -377,6 +382,7 @@
     },
     "/readingGoals/": {
       "get": {
+        "summary": "Use to get all goals",
         "description": "",
         "parameters": [],
         "responses": {
@@ -391,6 +397,7 @@
     },
     "/readingGoals/{_id}": {
       "get": {
+        "summary": "Use to get one specific goal",
         "description": "",
         "parameters": [
           {
@@ -413,6 +420,7 @@
         }
       },
       "put": {
+        "summary": "Use to update a specific goal",
         "description": "",
         "parameters": [
           {
@@ -453,6 +461,7 @@
         }
       },
       "delete": {
+        "summary": "Use to delete a specific goal",
         "description": "",
         "parameters": [
           {
@@ -480,7 +489,7 @@
       }
     },
     "/auth/logout": {
-      "post": {
+      "get": {
         "description": "",
         "parameters": [],
         "responses": {}
