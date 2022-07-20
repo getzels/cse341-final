@@ -18,7 +18,7 @@ router.post('/', bookValidation,
           return res.status(400).json({ errors: errors.array()});
     }else{
         next()
-    }}, bookController.createBook
+    }}, isLoggedIn, bookController.createBook
     )
 
 //Get all books

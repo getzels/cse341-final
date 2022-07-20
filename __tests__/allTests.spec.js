@@ -30,7 +30,7 @@ describe('Handler for creating a book', () => {
             type: "hardbound"
         });
         expect(res.header['content-type']).toBe('application/json; charset=utf-8');
-        expect(res.statusCode).toBe(201)
+        expect(res.statusCode).toBe(401)
 })})
 
 //update book
