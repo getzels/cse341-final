@@ -27,8 +27,8 @@ exports.directoryValidation = [
 ]
 
 exports.readingGoalValidation = [
-    check.Result('description', 'Description is requied').not().isEmpty(),
-    check.Result('startDate', 'Start date is requied').not().isEmpty(),
-    check.Result('endDate', 'End date is requied').not().isEmpty(),
-    check.Result('book', 'Book is requied').not().isEmpty()
+    check('description', 'Description is requied').not().isEmpty(),
+    check('startDate', 'Start date is requied').not().isEmpty(),
+    check('endDate', 'End date is requied').not().isEmpty(),
+    check('book', 'Book is requied').not().isEmpty()
 ]
